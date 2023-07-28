@@ -51,13 +51,13 @@
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
 // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-// | `     |   1 |   2 |   3  |   4  |   5  |                   |   6  |   7   |   8   |   9  |    0  |  F12  |
+// | `     |   1 |   2 |   3  |   4  |   5  |                   |   6  |   7   |   8   |   9  |    -  |   _   |
 // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
 // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
 //               |     |      |      |      |        |  |       |      |       |       |      |
             bindings = <
 &trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8          &kp F9    &kp F10   &kp F11
-&kp GRAVE &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                    &kp N6    &kp N7   &kp N8          &kp N9    &kp N0    &kp F12
+&kp GRAVE &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                    &kp N6    &kp N7   &kp N8          &kp N9    &kp MINUS &kp UNDER
 &trans    &kp EXCL  &kp AT    &kp HASH    &kp DLLR  &kp PRCNT                 &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp PIPE
 &trans    &kp EQUAL &kp MINUS &kp KP_PLUS &kp LBRC  &kp RBRC  &trans   &trans &kp LBKT  &kp RBKT &kp SEMI        &kp COLON &kp BSLH  &trans
                     &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans          &trans
@@ -86,18 +86,18 @@
 
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR | BT1   | BT2   |  BT3  |  BT4  |  BT5  |                |      |      |       |      |       |       |
-// |EXTPWR|RGB_HUD|RGB_HUI|RGB_SAD|RGB_SAI|RGB_EFF|                |      |      |       |      |       |       |
-// |      |RGB_BRD|RGB_BRI|       |       |       |                |      |      |       |      |       |       |
-// |      |       |       |       |       |       |RGB_TOG| |      |      |      |       |      |       |       |
-//                |       |       |       |       |       | |      |      |      |       |      |
+// |EXTPWR|RGB_HUD|RGB_HUI|RGB_SAD|RGB_SAI|RGB_EFF|                |      |   7  |   8   |   9  |       |       |
+// |      |RGB_BRD|RGB_BRI|       |       |       |                |      |   4  |   5   |   6  |       |       |
+// |      |       |       |       |       |       |RGB_TOG| |      |      |   1  |   2   |   3  |       |       |
+//                |       |       |       |       |       | |      |      |      |   0   |      |
 
         Adjust_layer {
         bindings = <
 &bt BT_CLR                      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                                    &none &none &none &none &none &none
-&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                                 &none &none &none &none &none &none
-&none                           &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                           &none &none &none &none &none &none
-&none                           &none           &none           &none           &none           &none               &rgb_ug RGB_TOG  &none      &none &none &none &none &none &none
-                                                &none           &none           &none           &none               &none            &none      &none &none &none &none
+&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                                 &none &kp 7 &kp 8 &kp 9 &none &none
+&none                           &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                           &none &kp 4 &kp 5 &kp 6 &none &none
+&none                           &none           &none           &none           &none           &none               &rgb_ug RGB_TOG  &none      &none &kp 1 &kp 2 &kp 3 &none &none
+                                                &none           &none           &none           &none               &none            &none      &none &none &kp 0 &none
         >;
         };
 
